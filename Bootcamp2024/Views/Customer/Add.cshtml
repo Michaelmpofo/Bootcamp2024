@@ -1,0 +1,42 @@
+﻿@model Customer
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="alert alert-primary">
+            Add Customer
+        </div>
+    </div>
+    <div class="col-6 offset-3">
+        <form method="post"asp-controller="Customer" asp-action="Add">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input class="form-control" asp-for="FirstName" />
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input class="form-control" asp-for="LastName" />
+                    <span class="text-danger" asp-validation-for="LastName"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">City</label>
+                    <input class="form-control" asp-for="City" />
+                    <span class="text-danger" asp-validation-for="City"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Country</label>
+                    <input class="form-control" asp-for="Country" />
+                    <span class="text-danger" asp-validation-for="Country"></span>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label class="form-label">Phone</label>
+                    <input class="form-control" asp-for="Phone"/>
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                </div>
+                <div class="col-md-12 my-2">
+                    <button class="btn btn-outline-primary d-block w-100">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

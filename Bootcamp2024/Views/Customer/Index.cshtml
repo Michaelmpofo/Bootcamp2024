@@ -1,0 +1,47 @@
+﻿@model List<Customer>
+
+
+<h2> Customer Index Page</h2>
+<div class="text-end mb-2">
+<a class="btn btn-outline-primary" asp-controller="Customer" asp-action="Add">
+    Add Customer
+</a>
+</div>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>Jak Alolome</td>
+        <td>Kumasi</td>
+        <td>Country</td>
+        <td>0559365878</td>
+        <td>View</td>
+
+    </tr>
+    @foreach (Customer customer in Model)
+    {
+        <tr>
+            <td>@customer.FirstName @customer.LastName</td>
+            <td>@customer.City</td>
+            <td>@customer.Country</td>
+            <td>@customer.Phone</td>
+            <td>
+                <a class="btn btn-info text-white btn-sm" asp-controller="Customer" asp-action="Detail" asp-route-id="@customer.Id">
+                    <span class="bi bi-eye"></span>
+                </a>
+                <a class="btn btn-warning text-white btn-sm" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.Id">
+                    <span class="bi bi-pencil"></span>
+                </a>
+                <a class="btn btn-danger text-white btn-sm" asp-controller="Customer" asp-action="Delete" asp-route-id="@customer.Id">
+                    <span class="bi bi-trash"></span>
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
